@@ -9,7 +9,7 @@ define('BASE_URL', '/');
 
 // Database connection parameters.
 define('DB_USER', 'todolist');
-define('DB_PASS', 'chAngeMeN0w!');
+define('DB_PASS', 'test123');
 define('DB_NAME', 'todolist');
 define('DB_HOST', '127.0.0.1');
 define('DB_PORT', '3306');
@@ -44,7 +44,7 @@ if (isset($_POST['action'])) {
 
       $id = $_POST['id'];
       if(is_numeric($id)) {
-        $updateQuery = ''; // IMPLEMENT ME
+        $updateQuery = 'UPDATE todo SET done = NOT done WHERE id = ' . $id; // IMPLEMENT ME (MICAEL)
         if(!$db->query($updateQuery)) {
           die(print_r($db->errorInfo(), true));
         }
@@ -60,7 +60,7 @@ if (isset($_POST['action'])) {
 
       $id = $_POST['id'];
       if(is_numeric($id)) {
-        $deleteQuery = ''; // IMPLEMENT ME
+        $deleteQuery = 'DELETE FROM todo WHERE id = ' . $id; // Delete the task; // IMPLEMENT ME (FRANCOIS)
         if(!$db->query($deleteQuery)) {
           die(print_r($db->errorInfo(), true));
         }
@@ -77,7 +77,7 @@ if (isset($_POST['action'])) {
 /**
  * Select all tasks from the database.
  */
-$selectQuery = ''; // IMPLEMENT ME
+$selectQuery = 'SELECT * FROM todo ORDER BY created_at DESC'; // IMPLEMENT ME (ADEM)
 $items = $db->query($selectQuery);
 ?>
 
@@ -153,7 +153,7 @@ $items = $db->query($selectQuery);
                 <button type='submit' name='action' value='delete' class='btn btn-danger'>
                   X
                 </button>
-
+                
               </div>
             </form>
 
