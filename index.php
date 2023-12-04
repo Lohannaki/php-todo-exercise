@@ -8,7 +8,7 @@
 define('BASE_URL', '/');
 
 // Database connection parameters.
-define('DB_USER', 'root');
+define('DB_USER', 'lohann_kasper');
 define('DB_PASS', 'Test1!');
 define('DB_NAME', 'todolist');
 define('DB_HOST', '20.123.130.131');
