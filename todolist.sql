@@ -8,7 +8,7 @@ CREATE USER IF NOT EXISTS 'todolist'@'localhost' IDENTIFIED WITH mysql_native_pa
 GRANT ALL PRIVILEGES ON todolist.* TO 'todolist'@'localhost' ;
 
 USE todolist;
-exit
+
 CREATE TABLE IF NOT EXISTS `todo` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `title` varchar(2048) NOT NULL,
